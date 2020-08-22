@@ -62,6 +62,15 @@
                         <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for=""> User Type</label>
+                        <select name="user_type" class="form-control @error('user_type') is-invalid @enderror">
+                            <option value="">Choose the type of user</option>
+                            <option value="super_admin" {{ $user->user_type == 'super_admin' ? 'selected' : '' }}>Super Admin </option>
+                            <option value="data_entry" {{ $user->user_type == 'data_entry' ? 'selected' : '' }}>Data Entry </option>
+                        </select>
+                    </div>
                 </div>
                 <!-- /.card-body -->
 

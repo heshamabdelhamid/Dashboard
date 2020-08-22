@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href=" {{Route('dashboard')}} ">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Edit User</li>
+                        <li class="breadcrumb-item active">Add User</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -62,6 +62,17 @@
                             class="form-control @error('password_confirmation') is-invalid @enderror">
                         @error('password_confirmation')
                         <small class="text text-danger">{{ $message }}</small>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for=""> User Type</label>
+                        <select name="user_type" class="form-control @error('user_type') is-invalid @enderror">
+                            <option value="">Choose the type of user</option>
+                            <option value="super_admin">Super Admin </option>
+                            <option value="data_entry">Data Entry </option>
+                        </select>
+                        @error('user_type')
+                            <small class="text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>

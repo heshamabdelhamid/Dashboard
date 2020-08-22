@@ -45,6 +45,7 @@
                     <th style="width: 10px">#</th>
                     <th>name</th>
                     <th>email</th>
+                    <th>User Type</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -54,21 +55,22 @@
                     <td> {{$index + 1 }} </td>
                     <td> {{ $user->name}} </td>
                     <td> {{ $user->email}} </td>
+                    <td> {{ $user->user_type}} </td>
                     <td>
                         <a href=" {{route('users.edit',$user->id )}} " class="btn btn-primary"><i class="fa fa-edit"></i> Edit </a>
 
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{$user->id}}">
                             <i class="fa fa-trash"></i> Delete
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                            aria-labelledby="exampleModalLabel{{$user->id}}" aria-hidden="true">
+                        <div class="modal fade" id="exampleModal{{$user->id}}" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel{{$user->id}}">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>

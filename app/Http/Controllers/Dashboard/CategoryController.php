@@ -53,7 +53,6 @@ class CategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -84,7 +83,6 @@ class CategoryController extends Controller
         ]);
 
         $category->update($request->all());
-
         return redirect()->route('categories.index');
     }
 

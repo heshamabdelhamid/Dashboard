@@ -15,7 +15,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block"> {{Auth::user()->name}} </a>
             </div>
         </div>
 
@@ -52,13 +52,6 @@
                                 <p>Index</p>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href=" {{route('users.create')}} " class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
 
@@ -75,13 +68,6 @@
                             <a href=" {{route('categories.index')}} " class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Index</p>
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href=" {{route('categories.create')}} " class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create</p>
                             </a>
                         </li>
                     </ul>
@@ -103,12 +89,6 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a href=" {{route('news.create')}} " class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Create</p>
-                            </a>
-                        </li>
                     </ul>
                 </li>
             </ul>

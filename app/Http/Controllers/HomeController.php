@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\News;
+use App\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $news = News::count();
+        $users = User::count();
+        $categories = Category::count();
+        return view('dashboard', compact('news', 'users', 'categories'));
     }
 }
